@@ -1,13 +1,14 @@
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import { useEffect } from "react";
 
 export default function SelectComponent({
   optionsArray,
   onSelectionChange,
+  value,
 }: {
   optionsArray: string[];
   onSelectionChange: (value: string) => void;
+  value: string;
 }) {
   const handleSelectionChange = (event: any, value: any) => {
     onSelectionChange(value);
@@ -20,6 +21,7 @@ export default function SelectComponent({
       id="select-component"
       disableClearable
       options={optionsArray}
+      value={value}
       onChange={handleSelectionChange}
       renderInput={(params) => (
         <TextField
