@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Kanit } from "next/font/google";
+import "./reset.css";
 import "./globals.css";
+import "flowbite/dist/flowbite.css";
 import FooterComponent from "../components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const kanit = Kanit({ subsets: ["latin"], weight: "600" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-emerald-400  flex justify-center ${inter.className}`}
+        className={`bg-emerald-400  flex justify-center ${kanit.className}`}
       >
         <main>{children}</main>
         <FooterComponent />
