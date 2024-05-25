@@ -1,37 +1,20 @@
 "use client";
 import SelectComponent from "@/components/select";
-import React from "react";
-
-/*
-interface Option {
-  id: number;
-  name: string;
-  status: string;
-  species: string;
-  gender: string;
-  image: string;
-}
- */
+import React, { useEffect } from "react";
+import { getCharacters, CharacterModel } from "./api";
 
 function ClassicGame() {
-  const temp: Array<any> = [
-    {
-      id: 5,
-      name: "string",
-      status: "string",
-      species: "string",
-      gender: "string",
-      image: "string",
-    },
-    {
-      id: 6,
-      name: "strings",
-      status: "string",
-      species: "string",
-      gender: "string",
-      image: "string",
-    },
-  ];
+  //type characters for charactermodel
+  const [characters, setCharacters] = React.useState<CharacterModel[]>([]);
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const [totalPages, setTotalPages] = React.useState(1);
+  useEffect(() => {
+    getCharacters().then((res) => {
+      setCharacters(res.data.characters.results);
+      setTotalPages(res.data.characters.info.pages);
+    });
+  }, []);
+
   const onSelectionChange = (value: string) => {
     console.log(value);
   };
@@ -42,7 +25,7 @@ function ClassicGame() {
       </div>
       <SelectComponent
         onSelectionChange={onSelectionChange}
-        optionsArray={temp.map((e) => e.name)}
+        optionsArray={characters?.map((e: CharacterModel) => e.name)}
       ></SelectComponent>
     </div>
   );
