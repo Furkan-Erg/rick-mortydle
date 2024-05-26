@@ -15,15 +15,15 @@ export interface CharacterModel {
   location: { name: string };
 }
 
-export async function getCharacters(): Promise<
-  ApolloQueryResult<CharacterResponse>
-> {
+export async function getCharacters(
+  page: number = 1
+): Promise<ApolloQueryResult<CharacterResponse>> {
   const client = createApolloClient();
   try {
     const res = await client.query({
       query: gql`
         query {
-          characters {
+          characters(page: ${page}) {
             results {
               id
               name
