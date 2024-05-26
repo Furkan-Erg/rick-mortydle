@@ -1,10 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import { usePathname } from "next/navigation";
+import React, { use } from "react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { MdEmail, MdFavorite } from "react-icons/md";
 function FooterComponent() {
   return (
-    <div className="absolute bottom-0 text-3xl  mb-1 text-white">
+    <div className="relative flex justify-center items-center bottom-0 text-3xl  mb-1 text-white">
       <div className="flex flex-col md:flex-row gap-1">
         <div className="text-base">Made by:</div>
         <div className="flex flex-row">

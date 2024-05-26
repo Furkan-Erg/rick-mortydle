@@ -22,7 +22,6 @@ const informationNames = [
 ];
 
 function ClassicGame() {
-  //type characters for charactermodel
   const [characters, setCharacters] = React.useState<CharacterModel[]>([]);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [totalPages, setTotalPages] = React.useState(1);
@@ -93,7 +92,7 @@ function ClassicGame() {
             <div className={guessHistory.length > 0 ? "hidden xr:flex" : ""}>
               <div className="bg-blue-900 border-4 border-black text-white text-sm md:text-xl text-bold rounded-lg py-4 px-8 text-center shadow-md ">
                 <div>Who is this Character</div>
-                <div className="opacity-8 ">
+                <div className="opacity-70 ">
                   Type any character name to get started.
                 </div>
               </div>

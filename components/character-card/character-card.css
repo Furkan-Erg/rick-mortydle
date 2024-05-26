@@ -1,0 +1,17 @@
+.status {
+  font-weight: 700;
+  color: #fff;
+  padding: 0 0.4rem;
+}
+.status-Alive {
+  background-color: #00b894;
+}
+.status-Dead {
+  background-color: #d63031;
+}
+.status-unknown {
+  background-color: #6c5ce7;
+}
+.test {
+  background: red;
+}

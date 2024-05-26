@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-slate-400  flex justify-center ${kanit.className}`}>
+      <body
+        className={`bg-slate-400  flex  flex-col justify-center ${kanit.className}`}
+      >
         <main>{children}</main>
         <FooterComponent />
       </body>
