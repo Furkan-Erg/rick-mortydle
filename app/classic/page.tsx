@@ -199,7 +199,7 @@ function ClassicGame() {
           <div className="self-center flex justify-center items-center">
             <ConfettiComponent />
             <Button onClick={handleNextGame} color="dark">
-              Yeniden Oyna
+              Play Again
             </Button>
           </div>
         )}
