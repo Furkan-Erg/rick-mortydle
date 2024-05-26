@@ -1,18 +1,18 @@
 "use client";
-import { useRouter } from "next/navigation";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
 
 export default function Error() {
   const [countdown, setCountdown] = React.useState(5);
   const router = useRouter();
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setCountdown((prev) => prev - 1);
     }, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (countdown === 0) {
       router.push("/");
     }
